@@ -193,9 +193,7 @@ class MovieController extends Controller
         ]);
 
         if ($validator->fails()) {
-            $message = new MessageBag();
-            $message->add('image_path ', 'Uploading image was failed');
-            return sendError('upload error', $message, 400);
+            return sendError('Validation Error.', $validator->errors(), 400);
         }
         $image = $request->file('image');
 

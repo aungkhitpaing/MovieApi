@@ -136,8 +136,8 @@ class CommentController extends Controller
         });
 
         $validator = Validator::make($inputs, [
-            'title'    => 'max:30|min:0',
-            'summary' => 'max:225|min:0',
+            'email'    => 'email|max:30|min:0',
+            'comment' => 'max:225|min:0',
         ]);
 
         if ($validator->fails()) {
